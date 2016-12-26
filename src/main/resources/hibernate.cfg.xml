@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+
+	<!-- This is for Postgres Database -->
+
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/diwakar?currentSchema=public</property>
+		<property name="hibernate.connection.username">centro</property>
+		<property name="hibernate.connection.password">centro</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- If you want to see what SQL queries Hibernate executes, set it to 
+			true from false. -->
+		<property name="show_sql">true</property>
+
+
+		<mapping class="com.example.ems.model.Employee" />
+		
+		</session-factory>
+		
+		
+
+		<!-- </session-factory> This is for MySQL Database <session-factory> <property 
+			name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> <property 
+			name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://localhost/mydb</property> 
+			<property name="hibernate.connection.username">root</property> <property 
+			name="hibernate.connection.password">root</property> <property name="hibernate.hbm2ddl.auto">update</property> 
+			If you want to see what SQL queries Hibernate executes, set it to true from 
+			false. <property name="show_sql">false</property> <mapping class="com.diwakar.hibernate.model.Employee" 
+			/> </session-factory> -->
+
+
+		<!-- Comment the above section and Un-Comment below section for Oracle -->
+		<!-- This is for Oracle Database -->
+
+		<!-- <session-factory> <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property> 
+			<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property> 
+			<property name="connection.username">username</property> <property name="connection.password">password</property> 
+			<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property> 
+			<property name="hbm2ddl.auto">update</property> <property name="show_sql">true</property> 
+			<mapping class="com.diwakar.hibernate.model.Employee"/> </session-factory> -->
+
+</hibernate-configuration>
